@@ -49,28 +49,30 @@ public class ProdutoController {
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar produto")
     public ResponseEntity<ProdutoDTO> atualizar(@PathVariable Long id, @RequestBody ProdutoCreateDTO dto) {
-        return service.buscarPorId(id)
-                .map(p -> {
-                    p.setNome(dto.getNome());
-                    p.setPreco(dto.getPreco());
-                    Produto atualizado = service.salvar(p);
-                    return ResponseEntity.ok(toDTO(atualizado));
-                })
+        Produto produto = new Produto();
+        produto.setNome(dto.getNome());
+        produto.setPreco(dto.getPreco());
+        return service.atualizar(id, produto)
+                .map(this::toDTO)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar produto")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        if (service.buscarPorId(id).isPresent()) {
-            service.deletar(id);
+        if (service.deletar(id)) {
             return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
     }
 
-    // Conversão de Produto para ProdutoDTO
     private ProdutoDTO toDTO(Produto produto) {
-        return new ProdutoDTO(produto.getId(), produto.getNome(), produto.getPreco());
+        ProdutoDTO dto = new ProdutoDTO();
+        dto.setId(produto.getId());
+        dto.setNome(produto.getNome());
+        dto.setPreco(produto.getPreco());
+        return dto;
     }
 }

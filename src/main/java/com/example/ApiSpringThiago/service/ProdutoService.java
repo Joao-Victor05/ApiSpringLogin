@@ -25,7 +25,19 @@ public class ProdutoService {
         return repository.save(produto);
     }
 
-    public void deletar(Long id) {
-        repository.deleteById(id);
+    public Optional<Produto> atualizar(Long id, Produto produto) {
+        return repository.findById(id).map(existing -> {
+            existing.setNome(produto.getNome());
+            existing.setPreco(produto.getPreco());
+            return repository.save(existing);
+        });
+    }
+
+    public boolean deletar(Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
