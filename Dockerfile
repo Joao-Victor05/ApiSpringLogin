@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia o jar gerado para dentro do container
-COPY target/ApiSpringThiago-0.0.1-SNAPSHOT.jar app.jar
+COPY target/ApiSpringProduto-0.0.1-SNAPSHOT.jar app.jar
 
 # Expõe a porta padrão do Spring Boot
 EXPOSE 8080
