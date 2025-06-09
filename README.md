@@ -1,4 +1,4 @@
-# ApiSpringLogin
+# ApiSpringProduto
 
 API RESTful em Java com Spring Boot, Docker, H2 e Swagger para operações CRUD de produtos.
 
@@ -19,11 +19,11 @@ API RESTful em Java com Spring Boot, Docker, H2 e Swagger para operações CRUD 
    ```
 2. Construa a imagem Docker:
    ```sh
-   docker build -t apispringlogin .
+   docker build -t apispringproduto .
    ```
 3. Rode o container:
    ```sh
-   docker run -d -p 8080:8080 --name apispringlogin apispringlogin
+   docker run -d -p 8080:8080 --name apispringproduto apispringproduto
    ```
 
 ## Endpoints principais

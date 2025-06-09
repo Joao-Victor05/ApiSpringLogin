@@ -1,9 +1,9 @@
-package com.example.ApiSpringThiago.controller;
+package com.example.ApiSpringProduto.controller;
 
-import com.example.ApiSpringThiago.model.Produto;
-import com.example.ApiSpringThiago.service.ProdutoService;
-import com.example.ApiSpringThiago.dto.ProdutoDTO;
-import com.example.ApiSpringThiago.dto.ProdutoCreateDTO;
+import com.example.ApiSpringProduto.model.Produto;
+import com.example.ApiSpringProduto.service.ProdutoService;
+import com.example.ApiSpringProduto.dto.ProdutoDTO;
+import com.example.ApiSpringProduto.dto.ProdutoCreateDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,11 @@
-package com.example.ApiSpringThiago;
+package com.example.ApiSpringProduto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiSpringThiagoApplication {
+public class ApiSpringProdutoApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ApiSpringThiagoApplication.class, args);
+        SpringApplication.run(ApiSpringProdutoApplication.class, args);
     }
 }

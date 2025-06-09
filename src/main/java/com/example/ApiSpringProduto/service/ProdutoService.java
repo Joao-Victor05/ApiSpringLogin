@@ -1,7 +1,7 @@
-package com.example.ApiSpringThiago.service;
+package com.example.ApiSpringProduto.service;
 
-import com.example.ApiSpringThiago.model.Produto;
-import com.example.ApiSpringThiago.repository.ProdutoRepository;
+import com.example.ApiSpringProduto.model.Produto;
+import com.example.ApiSpringProduto.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
